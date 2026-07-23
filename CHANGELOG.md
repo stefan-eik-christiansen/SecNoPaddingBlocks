@@ -1,13 +1,23 @@
+## [3.1.0] - 23-07-2026
+- Fixed compatibility with Shopware 6.6.10.20.
+- Replaced the outdated, hard-coded administration bundle.
+- Removes only Shopware's exact `20px` CMS block defaults and preserves custom spacing values.
+- Handles newly added blocks, generated product-detail blocks, loaded layouts and saves.
+- Supports standard and third-party CMS blocks without maintaining a fixed block list.
+
+## [3.0.0]
+- Shopware 6.6 compatibility.
+
 ## [2.0.1] - 11-01-2024
-- Simplify default value handling
-- Removed Javascript dev source map
-- Added .gitignore
+- Simplify default value handling.
+- Removed JavaScript development source map.
+- Added .gitignore.
 
 ## [2.0.0] - 03-08-2023
-- 6.5 compatibility
+- Shopware 6.5 compatibility.
 
 ## [1.1.0] - 03-08-2022
-- Fix 6.4.10+
+- Fix Shopware 6.4.10+.
 
 ## [1.0.0] - 15-07-2021
-- Initial release
+- Initial release.

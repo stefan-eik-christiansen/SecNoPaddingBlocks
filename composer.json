@@ -1,7 +1,7 @@
 {
     "name": "melvinachterhuis/zero-margin-blocks-shopware6-plugin",
-    "description": "Replaces default 20px margin with 0",
-    "version": "3.0.0",
+    "description": "Removes Shopware's default 20px margins from CMS blocks",
+    "version": "3.1.0",
     "type": "shopware-platform-plugin",
     "license": "MIT",
     "authors": [
@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "shopware/core": "6.6.*"
+        "shopware/core": "~6.6.10"
     },
     "autoload": {
         "psr-4": {
@@ -20,8 +20,8 @@
     "extra": {
         "shopware-plugin-class": "Melv\\ZeroMarginBlocks\\MelvZeroMarginBlocks",
         "label": {
-            "de-DE": "Replace 20px margin with 0",
-            "en-GB": "Replace 20px margin with 0"
+            "de-DE": "CMS-Block-Standardabstände entfernen",
+            "en-GB": "Remove default CMS block margins"
         }
     }
 }
