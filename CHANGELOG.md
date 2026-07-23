@@ -1,3 +1,7 @@
+## [3.2.0] - 23-07-2026
+- Added a one-time Shopware migration that clears all four margin fields from every existing CMS block in the database.
+- Existing custom and default CMS block margins are set to `NULL`; future custom values remain possible.
+
 ## [3.1.0] - 23-07-2026
 - Fixed compatibility with Shopware 6.6.10.20.
 - Replaced the outdated, hard-coded administration bundle.
