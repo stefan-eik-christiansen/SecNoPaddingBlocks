@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Melv\ZeroMarginBlocks\Migration;
+namespace Sec\Migration;
 
 use Doctrine\DBAL\Connection;
 use Shopware\Core\Framework\Migration\MigrationStep;

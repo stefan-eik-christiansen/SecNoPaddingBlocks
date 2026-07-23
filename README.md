@@ -1,6 +1,6 @@
-# Zero Margin Blocks for Shopware 6
+# No Padding CMS Blocks
 
-Removes Shopware's default `20px` margins from CMS blocks in Shopping Experiences.
+Removes Shopware's default `20px` inline paddings from CMS blocks in Shopping Experiences.
 
 ## Behaviour
 
@@ -18,12 +18,10 @@ Removes Shopware's default `20px` margins from CMS blocks in Shopping Experience
 
 ```bash
 bin/console plugin:refresh
-bin/console plugin:update MelvZeroMarginBlocks
+bin/console plugin:update SecNoPaddingBlocks
 bin/console cache:clear
 bin/build-administration.sh
 ```
-
-The ZIP already contains a compiled administration asset. Rebuilding is nevertheless recommended after updating administration extensions.
 
 ## License
 
