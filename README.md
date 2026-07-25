@@ -1,29 +1,36 @@
-## A plugin for [Shopware 6](https://github.com/shopware/platform)
+# No Padding CMS Blocks
 
-Removes the frustrating 20px default margin on the default Shopware blocks
+Removes Shopware's default `20px` inline paddings from CMS blocks in Shopping Experiences.
 
+## Behaviour
 
-https://user-images.githubusercontent.com/26538915/125843044-632097c3-5c1f-48c9-93bc-a2d20f921c7c.mp4
+**For 3.2+, 4.x is still Melvin's unfixed original at its fork.**
 
+- New CMS blocks start without Shopware's `20px` default margins.
+- Existing `20px` defaults are removed when a layout is loaded or saved.
+- On update to version 3.2.0, a one-time database migration removes all margins from all existing CMS blocks.
+- Custom values other than exactly `20px` remain unchanged.
+- Standard blocks and blocks supplied by third-party extensions are supported.
 
 ## Requirements
 
+- Shopware 6.6.10 or newer.
+
 | Version 	| Requirements               	|
 |---------	|----------------------------	|
-| 1.0.0    	| Shopware 6.4	              |
-| 2.0.0    	| Shopware 6.5	              |
 | 3.0.0    	| Shopware 6.6  	            |
 | 4.0.0    	| Shopware 6.7  	            |
 
-## Installation
-Install via Composer:
 
-`composer require melvinachterhuis/zero-margin-blocks-shopware6-plugin`
+## Installation after replacing an existing version
 
-Or download the correct [.zip file](https://github.com/MelvinAchterhuis/MelvZeroMarginBlocks/releases) that corresponds with your Shopware version and upload in the admin.
+```bash
+bin/console plugin:refresh
+bin/console plugin:update SecNoPaddingBlocks
+bin/console cache:clear
+bin/build-administration.sh
+```
 
 ## License
 
-Plugin's Icon by [flaticon](https://www.flaticon.com).
-
-The plugin is released under MIT. For a full overview check the [LICENSE](./LICENSE) file.
+MIT

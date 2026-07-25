@@ -1,3 +1,8 @@
+# Changelog
+
+## [4.0.1] - 2026-07-25
+- changed name
+
 ## [4.0.0] - 06-04-2025
 - 6.7 compatibility
 
