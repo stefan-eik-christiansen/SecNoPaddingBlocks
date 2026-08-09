@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Melv\ZeroMarginBlocks\Subscriber;
+namespace Sec\Subscriber;
 
 use Doctrine\DBAL\Connection;
 use Shopware\Core\Framework\DataAbstractionLayer\Event\EntityWrittenEvent;
