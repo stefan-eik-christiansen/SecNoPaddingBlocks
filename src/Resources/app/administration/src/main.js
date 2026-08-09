@@ -1,4 +1,3 @@
-const DEFAULT_MARGIN = '20px';
 const MARGIN_PROPERTIES = [
     'marginTop',
     'marginRight',
@@ -6,19 +5,17 @@ const MARGIN_PROPERTIES = [
     'marginLeft',
 ];
 
-function removeShopwareDefaultMargins(block) {
+function removeCmsBlockMargins(block) {
     if (!block) {
         return;
     }
 
     MARGIN_PROPERTIES.forEach((property) => {
-        if (block[property] === DEFAULT_MARGIN) {
-            block[property] = '';
-        }
+        block[property] = null;
     });
 }
 
-function removeShopwareDefaultMarginsFromPage(page) {
+function removeCmsBlockMarginsFromPage(page) {
     if (!page || !Array.isArray(page.sections)) {
         return;
     }
@@ -28,9 +25,24 @@ function removeShopwareDefaultMarginsFromPage(page) {
             return;
         }
 
-        section.blocks.forEach(removeShopwareDefaultMargins);
+        section.blocks.forEach(removeCmsBlockMargins);
     });
 }
+
+function removeCmsBlockRegistryMargins() {
+    const cmsService = Shopware.Service('cmsService');
+    const blocks = cmsService.getCmsBlockRegistry();
+
+    Object.values(blocks).forEach((block) => {
+        if (!block.defaultConfig) {
+            block.defaultConfig = {};
+        }
+
+        removeCmsBlockMargins(block.defaultConfig);
+    });
+}
+
+removeCmsBlockRegistryMargins();
 
 Shopware.Component.override('sw-cms-sidebar', {
     methods: {
@@ -46,7 +58,7 @@ Shopware.Component.override('sw-cms-sidebar', {
                 ? section.blocks[dropData.dropIndex]
                 : null;
 
-            removeShopwareDefaultMargins(block);
+            removeCmsBlockMargins(block);
         },
     },
 });
@@ -55,16 +67,16 @@ Shopware.Component.override('sw-cms-detail', {
     methods: {
         processBlock(block, blockType) {
             this.$super('processBlock', block, blockType);
-            removeShopwareDefaultMargins(block);
+            removeCmsBlockMargins(block);
         },
 
         updateSectionAndBlockPositions() {
-            removeShopwareDefaultMarginsFromPage(this.page);
+            removeCmsBlockMarginsFromPage(this.page);
             this.$super('updateSectionAndBlockPositions');
         },
 
         onSaveEntity() {
-            removeShopwareDefaultMarginsFromPage(this.page);
+            removeCmsBlockMarginsFromPage(this.page);
             return this.$super('onSaveEntity');
         },
     },

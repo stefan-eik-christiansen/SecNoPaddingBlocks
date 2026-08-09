@@ -1,7 +1,7 @@
 {
     "name": "sec/no-padding-blocks",
     "description": "Removes the 20px padding from cms blocks.",
-    "version": "3.2.1",
+    "version": "3.3.0",
     "type": "shopware-platform-plugin",
     "license": "MIT",
     "authors": [
@@ -18,7 +18,6 @@
     },
     "extra": {
         "shopware-plugin-class": "Sec\\SecNoPaddingBlocks",
-        "plugin-icon": "src/Resources/config/sec-icon-shopware-plugin.png",
         "label": {
             "de-DE": "Entfernt die 20px Abstände von CMS Blöcken.",
             "en-GB": "Remove the 20px padding on CMS blocks."

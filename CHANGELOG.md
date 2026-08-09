@@ -1,4 +1,9 @@
-# Changelog
+## [3.3.0] - 2026-08-02
+
+- Enforces empty CMS block margins server-side after every `cms_block` write.
+- Prevents the Administration or third-party extensions from persisting Shopware's default `20px` values again.
+- Clears all four margin properties before every Administration save and for newly created blocks.
+- Resets CMS block registry defaults without relying on a hard-coded block list.
 
 ## [3.2.0] - 2026-07-23
 
